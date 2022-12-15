@@ -1,6 +1,6 @@
 
 
-gcloud container clusters get-credentials production --zone=us-west1-b
+gcloud container clusters get-credentials production --zone=us-east1-c
 
 nano sample.yaml
 
@@ -11,7 +11,7 @@ now press ctrl f
 
 kubectl create -f sample.yaml
 
-gcloud container node-pools create POOL_NAME --cluster=production --zone=ZONE_NAME --machine-type=n1-standard-2 --image-type=cos_containerd --sandbox type=gvisor
+gcloud container node-pools create hardened-pool --cluster=production --zone=us-east1-c --machine-type=n1-standard-2 --image-type=cos_containerd --sandbox type=gvisor
 
 kubectl apply -f sample.yaml
 
